@@ -9,4 +9,6 @@ require('./lib/steps/initialize')()
     .then(require('./lib/steps/displayExistingSettings'))
     .then(require('./lib/steps/fetchDataFromHive'))
     .then(require('./lib/steps/compileDataIntoHTML'))
+    .then(require('./lib/steps/outputHTML'))
+    .then(require('./lib/steps/success'))
     .catch((err) => cli.error(err));
