@@ -176,7 +176,6 @@ function load() {
         this.each(function() {
             var img = $(this).find('img');
             var src = img.attr('src');
-            console.log($(this).find('.article-inline__body'));
             $(this).find('.article-inline__body').css('background-image', 'url(' + src + ')');
         });
     }
