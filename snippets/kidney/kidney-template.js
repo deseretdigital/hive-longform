@@ -180,5 +180,19 @@ function load() {
         });
     }
     $('.inline-parallax').parallax();
+
+    $.fn.waffle = function(options) {
+        this.each(function() {
+            var highlighted = $(this).attr('data-highlighted');
+            var displayCount = $(this).attr('data-display-count') || 1000;
+            var population = $(this).attr('data-population');
+            var ratio = displayCount / population;
+            for (var i = 0; i < displayCount; i++) {
+                $(this).find('.grid').append($('<span />').toggleClass('active', i <= (ratio * highlighted)));
+            }
+        });
+    }
+
+    $('.waffle').waffle();
 };
 load();
