@@ -1,0 +1,347 @@
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,900);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700);
+body {
+    font-family: Lato, Arial, sans-serif;
+    background-color: #F0F0F0;
+    color: #303030;
+    margin: 0;
+}
+
+// Inlines
+.inline-gallery-placeholder {}
+.inline-gallery-two-item {
+    text-align: center;
+    padding: 1rem;
+    margin: auto;
+}
+.inline-gallery-two-item .gallery-image {
+    display: inline-block;
+    width: 45%;
+    background-color: #303030;
+    padding: 1rem;
+}
+.inline-gallery-two-item .gallery-image:first-child {
+    margin-right: .5rem;
+}
+.inline-gallery-two-item .gallery-image:last-child {
+    margin-left: .5rem;
+}
+.inline-gallery-two-item .gallery-image img {
+    max-width: 100%;
+}
+.article-inline--media {
+    background: #303030;
+}
+.article-inline--media img {
+    width: 100%;
+}
+.inline-half-floated-right {
+    width: 40%;
+    background: #000;
+    margin-right: 15%;
+    margin-left: 1rem;
+    padding: .5rem;
+    float: right;
+}
+.inline-half-floated-left {
+    width: 40%;
+    background: #000;
+    margin-left: 15%;
+    padding: .5rem;
+    margin-right: 1rem;
+    float: left;
+}
+.inline-large-image {
+    width: 100%;
+    background: #000;
+}
+.inline-large-image img {
+    width: 100%;
+}
+.article-inline--media .article-inline__caption, .article-inline--gallery .gallery-image__caption {
+    padding: 1rem;
+    font-size: 10pt;
+    text-align: right;
+    color: #F0F0F0;
+}
+
+.inline-parallax .article-inline__body {
+        display: block;
+        position: relative;
+        background-attachment: fixed;
+        background-position: center;
+        background-size: auto 1200px;
+        background-repeat: no-repeat;
+        background-origin: padding-box;
+        width: 100%;
+        height: 550px;
+        min-height: 550px;
+}
+.inline-parallax .article-inline__body img {
+display: none;
+}
+@media (max-width: 760px) {
+ .inline-half-floated-right, .inline-half-floated-left {
+   float: none;
+   width: 80%;
+   margin: 0 auto;
+ }
+ .inline-parallax .article-inline__body {
+  height: auto;
+  min-height: 0;
+  background: initial !important;
+ }
+ .inline-parallax .article-inline__body img {
+    display: block;
+ }
+}
+header {
+    display: none;
+}
+h1, h2, h3 {
+    font-family: "Lora";
+    font-weight: 700;
+    padding: 8rem 0;
+}
+main>h2 {
+    text-align: center;
+    position: relative;
+
+}
+main>p {
+    max-width: 36rem;
+    font-size: 14pt;
+    margin: auto;
+    margin-bottom: 1.25rem;
+    padding: 0 .5rem;
+    line-height: 21pt;
+    font-family: 'Playfair Display', Georgia, "Times New Roman", serif;
+}
+main>p:first-of-type::first-letter {
+    font-size: 305%;
+    float: left;
+    padding-right: .1em;
+    line-height: 1;
+    margin-top: -.25rem;
+}
+main>p:first-of-type, h2 + p {
+    font-size: 150%;
+}
+main .article-inline {
+    margin-bottom: 2rem;
+}
+main .article-inline p {
+    width: auto;
+    margin: 0;
+    margin-bottom: 0;
+}
+header {}
+nav {
+    background-color: RGBA(11, 22, 33, 0.7);
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    width: 100%;
+    text-align: right;
+    font-family: "Lato";
+}
+nav > ul {
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+}
+nav > ul > li {
+    display: inline-block;
+    border-radius: 2px;
+    padding: 0.15em 0.5em;
+    margin: 0 0.15em;
+    background: RGBA(225, 225, 225, 0.6);
+    color: #444;
+    font-weight: 400;
+    overflow: hidden;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color .1s ease-in-out;
+}
+nav > ul > li:hover, nav > ul > li.active {
+    background: RGBA(225, 225, 225, 0.8);
+}
+nav > ul > li > .name {
+    display: none;
+    text-transform: small-caps;
+}
+nav > ul > li.active > .name {
+    display: initial;
+    font-weight: bold;
+}
+nav > ul > li.active > .number {
+    display: none;
+}
+.cover {
+    margin-top: 55px;
+    margin-bottom: 80px;
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    background-color: RGBA(40, 30, 30, 0.3);
+}
+.cover .video-container {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+.cover .video-container video {
+    width: auto;
+    min-width: 100%;
+    height: 100%;
+    position: absolute;
+    object-fit: cover;
+}
+@media (max-aspect-ratio: 16 / 9) and (min-aspect-ratio: 6 / 4) {
+    .cover .video-container video {
+        min-width: 100%;
+        height: 100%;
+    }
+}
+@media (min-aspect-ratio: 16 / 9) {
+    .cover .video-container video {
+        min-width: 100%;
+    }
+}
+@media (max-aspect-ratio: 3 / 4) {
+    .cover .video-container {
+        height: 500px;
+    }
+    .cover .video-container video {
+        width: 125%;
+    }
+}
+@media (max-aspect-ratio: 4 / 4) and (min-aspect-ratio: 3 / 4) {
+    .cover .video-container {
+        min-height: 600px;
+        height: 50%;
+    }
+}
+@media (max-aspect-ratio: 5 / 4) and (min-aspect-ratio: 4 / 4) {
+    .cover .video-container {
+        max-height: 700px;
+        height: 60%;
+    }
+}
+@media (max-aspect-ratio: 6 / 4) and (min-aspect-ratio: 5 / 4) {
+    .cover .video-container {
+        max-height: 800px;
+        height: 75%;
+    }
+}
+.cover .video-container {
+    /*  background-image: url("../assets/images/liberty-900.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.cover .alternate-image {
+    display: none;
+}
+@media (max-width: 760px) {
+    .cover .video-container {
+        display: none;
+    }
+    .cover .alternate-image {
+        display: block;
+        max-width: 100%;
+    }
+    .cover .alternate-image img {
+        width: 100%;
+    }
+}
+.cover .overlay {
+    position: absolute;
+    background: RGBA(255, 255, 255, 0.2);
+    height: auto;
+    left: 8rem;
+    top: 1rem;
+    bottom: auto;
+    text-align: left;
+    font-family: "Playfair Display";
+    padding: 2rem;
+    width: 28rem;
+    color: white;
+}
+.cover .overlay .overline {
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.25rem;
+    position: relative;
+}
+.cover .overlay .overline .liberty-bell {
+    height: 24px;
+    width: 24px;
+    fill: white;
+    margin-right: .5rem;
+    display: inline-block;
+    position: relative;
+    top: 4px;
+}
+.cover .overlay .overline span {
+    display: inline-block;
+    position: relative;
+}
+@media (min-width: 500px) {
+    .cover .overlay .overline span:before, .cover .overlay .overline span:after {
+        content: "";
+        position: absolute;
+        height: 5px;
+        border-bottom: 1px solid white;
+        top: 10px;
+        width: 100px;
+    }
+    .cover .overlay .overline span:before {
+        right: 100%;
+        margin-right: 15px;
+    }
+    .cover .overlay .overline span:after {
+        left: 100%;
+        margin-left: 15px;
+    }
+}
+.cover .overlay h1 {
+    width: 27rem;
+    font-size: 6.5rem;
+    margin: 0;
+    line-height: 100%;
+    margin-bottom: 1rem;
+}
+.cover .overlay .sub {
+    width: 27rem;
+    font-size: 2rem;
+    font-weight: normal;
+    margin: 0;
+}
+@media (max-width: 760px) {
+    .cover .overlay {
+        width: 100%;
+        display: block;
+        position: relative;
+        left: auto;
+        top: auto;
+        text-align: center;
+        padding: 1rem 0;
+    }
+    .cover .overlay h1 {
+        width: 100%;
+        font-size: 3rem;
+        margin: 1rem auto;
+    }
+    .cover .overlay .sub {
+        width: 100%;
+        font-size: 1.5rem;
+        font-style: italic;
+    }
+}
+.cover h1, .cover h2, .cover h3 {
+    padding: 0;
+    font-family: Lora, Georgia, 'Times New Roman', serif;
+}
